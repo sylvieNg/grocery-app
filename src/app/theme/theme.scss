@@ -1,0 +1,15 @@
+$colors:(
+  //theme color
+  primary: #1875F0,
+  accent: #8BD8BD,
+  success: #28A745,
+  danger: #DC3545,
+  warning: #FFC107,
+  info: #ADB5BD,
+  dark: #212529,
+  light: #FFFFFF
+);
+
+@function color($colorName) {
+    @return map-get($colors, $colorName);
+}

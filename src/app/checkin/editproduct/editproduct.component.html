@@ -1,0 +1,39 @@
+<div class="card-body">
+  <form id="product-page" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-label-group">
+      <input type="text" placeholder="id" formControlName="id" class="form-control" hidden/>
+    </div>
+    <div class="form-label-group">
+      <input type="text" placeholder="price" formControlName="price" class="form-control" hidden/>
+    </div>
+    <div class="form-label-group">
+      <input type="text" placeholder="imageUrl" formControlName="imageUrl" class="form-control" hidden/>
+    </div>
+    <div class="form-label-group">
+      <input type="text" placeholder="quantity" formControlName="quantity" class="form-control" hidden/>
+    </div>
+    <div class="form-label-group">
+      Barcode
+      <input type="number" placeholder="Barcode" formControlName="barcode" class="form-control"/>
+        <div *ngIf="submitted && productForm.controls.barcode.errors.required" class="alert alert-danger">
+          Barcode is required.
+        </div>
+        <div *ngIf="submitted && productForm.controls.barcode.errors.pattern" class="alert alert-danger">
+          Barcode only accept integer and 12 digit int.
+        </div>
+    </div>
+    <div class="form-label-group">
+      Brand
+      <input type="text" placeholder="Name" formControlName="name" class="form-control"/>
+      <div *ngIf="submitted && productForm.controls.name.errors.required" class="alert alert-danger">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-label-group">
+      Name
+      <input type="text" placeholder="Description" formControlName="description" class="form-control"/>
+    </div>
+    <button class="btn btn-sm btn-danger btn-block text-uppercase cancel" style="float: right; margin-top: 0em;" (click)="cancel()">Cancel</button>
+    <button class="btn btn-sm btn-primary btn-block text-uppercase submit" style="float: right; margin-top: 0em;" type="submit">Submit</button>
+  </form>
+</div>

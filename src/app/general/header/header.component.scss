@@ -1,0 +1,18 @@
+@import 'theme';
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    top: 0;
+    padding: 10px 5vw;
+    justify-content: space-between;
+    background: color('dark');
+    color: color('light');
+    height: 60px;
+}
+
+.collapse a {
+    color: white
+}

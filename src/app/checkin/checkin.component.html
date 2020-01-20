@@ -1,0 +1,20 @@
+<div class="search-input">
+  <i class="fas fa-search" style="position: absolute; margin: 15px 10px;"></i>
+  <input type="text" id="myInput" [(ngModel)]="searchText" placeholder="Search text">
+</div>
+<table id="myTable">
+  <tr class="header">
+    <th>Barcode</th>
+    <th>Brand</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Edit</th>
+  </tr>
+  <tr  *ngFor="let product of products | filter: searchText">
+    <td>{{product.barcode || '-'}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.price}}</td>
+    <td><button class="btn" (click)="edit(product)"><i class="fas fa-pen"></i></button></td>
+  </tr>
+</table>
